@@ -65,4 +65,15 @@ const push = (collection, id, item) => {
 	}
 };
 
+// NEED TO UPDATE THIS TO INCORPORATE BOTH dayId AND activityId
+// const push = (collection, id, item) => {
+// 	if (collection.modelName === 'day') {
+// 		collection.findByIdAndUpdate(
+// 			id,
+// 			{ $push: { activities: item } },
+// 			{ useFindAnyModify: false }
+// 		);
+// 	}
+// };
+
 module.exports = { index, show, create, update, destroy, push };

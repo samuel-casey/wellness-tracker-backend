@@ -82,4 +82,18 @@ router.put('/:id', async (req, res) => {
 	}
 });
 
+// NEED TO INCLUDE THE ID OF BOTH DAY AND ACTIVITY HERE
+router.put('/dayId/:id', async (req, res) => {
+	try {
+		const addedActivity = await push(Day, req.params.id, req.body);
+		res.json({
+			status: 201,
+			message: 'OK',
+			data: addedActivity,
+		});
+	} catch (err) {
+		console.log(err);
+	}
+});
+
 module.exports = router;

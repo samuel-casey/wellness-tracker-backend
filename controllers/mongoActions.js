@@ -66,7 +66,8 @@ const push = (collection, id, item) => {
 };
 
 // NEED TO UPDATE THIS TO INCORPORATE BOTH dayId AND activityId
-// const push = (collection, id, item) => {
+// the function above takes the activityId as req.body in the router
+// const push = (collection, dayId, activityId, item) => {
 // 	if (collection.modelName === 'day') {
 // 		collection.findByIdAndUpdate(
 // 			id,

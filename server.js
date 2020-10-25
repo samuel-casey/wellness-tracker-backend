@@ -1,6 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
-// const mongoose = require('./db/connection');
+const auth = require('./auth/index');
 
 const app = express();
 
@@ -26,9 +26,9 @@ app.use(morgan('dev')); //logging
 
 // Routes and Routers
 // Route for testing server is working
-app.get('/', (req, res) => {
+app.get('/', auth, (req, res) => {
 	res.json({
-		hello: 'Hello World! What have you done to improve your wellness today?',
+		hello: `Hello ${req.payload.email}! What have you done to improve your wellness today?`,
 	});
 });
 

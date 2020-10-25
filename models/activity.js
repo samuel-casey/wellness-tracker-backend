@@ -6,6 +6,7 @@ const activitySchema = new Schema(
 		activity_type: { type: String, required: true },
 		activity_mins: { type: Number, required: true },
 		rating: { type: Number, required: true },
+		email: { type: String, required: true },
 	},
 	{ timestamps: true }
 );

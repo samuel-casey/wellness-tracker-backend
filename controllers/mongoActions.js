@@ -1,8 +1,8 @@
 const mongoose = require('../db/connection');
 
 // Show all documents
-const index = (collection) => {
-	return collection.find().populate('activities');
+const index = (collection, userEmail) => {
+	return collection.find({ email: userEmail }).populate('activities');
 };
 
 // Find a document by ID and display it

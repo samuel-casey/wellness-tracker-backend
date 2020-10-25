@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 const morgan = require('morgan');
 const dayRouter = require('./controllers/day');
 const activityRouter = require('./controllers/activity');
+const authRouter = require('./controllers/user');
 
 // Middleware
 NODE_ENV === 'production' ? app.use(cors(corsOptions)) : app.use(cors());
@@ -31,6 +32,7 @@ app.get('/', (req, res) => {
 	});
 });
 
+app.use('/auth', authRouter);
 app.use('/api/day', dayRouter);
 app.use('/api/activity', activityRouter);
 

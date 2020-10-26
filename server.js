@@ -25,6 +25,7 @@ app.use(express.json());
 app.use(morgan('dev')); //logging
 
 // Routes and Routers
+app.use('/auth', authRouter);
 // Route for testing server is working
 app.get('/', auth, (req, res) => {
 	res.json({
@@ -32,7 +33,6 @@ app.get('/', auth, (req, res) => {
 	});
 });
 
-app.use('/auth', authRouter);
 app.use('/api/day', dayRouter);
 app.use('/api/activity', activityRouter);
 

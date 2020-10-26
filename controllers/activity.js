@@ -22,19 +22,19 @@ router.get('/', auth, async (req, res) => {
 	}
 });
 
-// show specific post by id (no user email required bc using activity id)
-router.get('/:id', auth, async (req, res) => {
-	try {
-		const activities = await show(Activity, req.params.id);
-		res.json({
-			status: 200,
-			message: 'OK',
-			data: activities,
-		});
-	} catch (err) {
-		console.log(err);
-	}
-});
+// // show specific post by id (no user email required bc using activity id)
+// router.get('/:id', auth, async (req, res) => {
+// 	try {
+// 		const activities = await show(Activity, req.params.id);
+// 		res.json({
+// 			status: 200,
+// 			message: 'OK',
+// 			data: activities,
+// 		});
+// 	} catch (err) {
+// 		console.log(err);
+// 	}
+// });
 
 // Create a new post and attach user email
 router.post('/', auth, async (req, res) => {
